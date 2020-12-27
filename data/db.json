@@ -1,0 +1,39 @@
+{
+    "projects" : [
+        {
+            "id" : 1,
+            "title":"project 1",
+            "description":"i will complete this project before saturday " ,
+            "assignedTo": ["taqi","me"],
+            "updates":[ "hello i m taqi","hello again","third hello"]
+        },
+        {
+            "id" : 2,
+            "title":"project 2",
+            "description":"i will complete this project before saturday " ,
+            "assignedTo": ["miten","aunty"],
+            "updates":[ "hello i m taqi","hello again","third hello"]
+        },
+        {
+            "id" : 3,
+            "title":"project 3",
+            "description":"i will complete this project before saturday " ,
+            "assignedTo": ["jeet","ugh"],
+            "updates":[ "hello i m taqi","hello again","third hello"]
+        },{
+            "id" : 4,
+            "title":"project 4",
+            "description":"i will complete this project before saturday " ,
+            "assignedTo": ["neel","batul"],
+            "updates":[ "hello i m taqi","hello again","third hello"]
+        }
+
+    ],
+    "users": [
+        {
+            "id":1,
+            "userName":"Taqi",
+            "password":"imtaqi"
+        }
+    ]
+}
