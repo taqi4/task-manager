@@ -1,11 +1,16 @@
-import React from 'react';
-import Nav from './Nav';
-import Tasks from './Tasks';
+import React from "react";
+import Nav from "./Nav";
+import Tasks from "./Tasks";
+import InitFirebase from "../helper/initFirebase";
+
 function Home() {
-    return (<>
-    <Nav />
-<Tasks/>
+  InitFirebase();
+
+  return (
+    <>
+      <Nav />
+      <Tasks />
     </>
-    );
+  );
 }
-export default Home
+export default Home;
