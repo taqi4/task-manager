@@ -3,19 +3,21 @@
     width: 20vw;
     height: 100vh;
     background: white;
-    left:-20vw;
+    /*left:-20vw;*/
+    transform: translateX(-100%);
     transition: all 0.5s linear;
 }
 .active{
     position: fixed;
     width: 20vw;
     height: 50vh;
-    background: inherit;
-    left:0vw;
+    background: yellow;
+    transform: translateX(0);
     border: 2px solid black ;
     box-shadow: 5px 5px 2px black;
-    border-radius: 20%;
+    border-radius: 5%;
     transition: all 0.5s linear;
+    z-index: 1;
 }
 .sidebar .active{
     left: 0vw;
@@ -23,13 +25,15 @@
 .sidebar ul li, .active ul li{
     color: blueviolet;
     list-style: none;
+
     margin: 5rem 3rem;
     border-bottom: 1px solid blue;
 }
 .sidebar .toggle-btn,.active .toggle-btn{
     position: absolute;
-    left: 170px;
-    top: 1px;
+    left: 100%;
+    top: 0%;
+    margin-left: 1rem;
     z-index: 1;
 }
 .sidebar .toggle-btn span{
@@ -50,6 +54,8 @@
 }
 
 .logo {
+    border-bottom: 1px solid black;
+    color: crimson;
     text-align: center;
 z-index: -1;
 }
@@ -78,3 +84,14 @@ z-index: -1;
     color:red;
 }*/
 
+@media only screen and (max-width:720px){
+    .sidebar ul li, .active ul li{
+        margin: 2rem 0rem;
+    
+        
+    } 
+    .sidebar,.active{
+        width:25vw;
+    height: 30vh;
+    }  
+}

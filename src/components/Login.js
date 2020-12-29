@@ -1,22 +1,13 @@
 import React, { Component } from 'react';
 import '../Styles/StyledLogin.css';
 import { Link } from 'react-router-dom'
-import { firebase } from "firebase";
+//import { firebase } from "firebase";
 
 class Login extends Component {
 
-  componentDidMount() {
+  //componentDidMount() {
 
-  }
-
-  renderPosts = async () => {
-    let uri = 'http://localhost:3000/users';
-    const res = await fetch(uri);
-    const users = await res.json();
-    console.log(users);
-  }
-
-
+  //}
   render() {
 
     return (
