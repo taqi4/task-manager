@@ -3,19 +3,31 @@ import "../Styles/StyledTasks.css";
 import firebase from "firebase";
 
 class Tasks extends Component {
+
   state = {
     name: [],
   };
-
+   
+  
   getData = async () => {
-    const db = firebase.firestore();
+     const db = firebase.firestore();
     const query = await db.collection("projects").get();
     const data = query.docs.map((doc) => {
       return doc.data();
     });
     return data;
   };
-
+  saveData =(e)=>{
+    e.preventDefault();
+    var ID=e.target.parentElement.getAttribute('id');//A variable ma id lavi dene
+    console.log(ID);
+    const updates =e.target.previousElementSibling ;   
+    console.log(updates.value);
+    const db = firebase.firestore();
+    db.collection('projects').doc(ID).update({
+      updates: [updates.value] 
+    });
+  }
   componentDidMount() {
     this.getData().then((data) => {
       this.setState({
@@ -25,6 +37,7 @@ class Tasks extends Component {
   }
 
   render() {
+    
     const { name } = this.state;
 
     var data =
@@ -40,10 +53,15 @@ class Tasks extends Component {
               <h3 className="description">
                 {"description: " + data.description}
               </h3>
-              <h2 className="assignedTo">
-                {"assignedTo: " + data.assignedTo[0] + " " + data.assignedTo[1]}
-              </h2>
-              <p className="updates">{"status: " + data.updates[0]}</p>
+              
+              <h2 className="updates" Style ="font-style: italic;
+    color:lightgreen;">{"status: " + data.updates}</h2>
+            <form action="" id = {data.title}>
+              <label htmlFor="updates"> updates: </label>
+              <input type="text" id="update" name="updates"placeholder="enter todays status....."/>
+              <button onClick={this.saveData}>submit</button>
+            </form>
+
             </div>
           );
         })
@@ -57,7 +75,9 @@ class Tasks extends Component {
   }
 }
 export default Tasks;
-
+//<h2 className="assignedTo">
+  //              {"assignedTo: " + data.assignedTo[0]+" "+data.assignedTo[1]}
+    //          </h2>
 // <div className="container">
 //         <div className="project">
 //           <h2 className="heading">project 1</h2>
